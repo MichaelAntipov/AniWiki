@@ -1,4 +1,4 @@
-/* ========= RESET & BASE ========= */
+/* ========= RESET & BASE STYLES ========= */
 *,
 *::before,
 *::after {
@@ -6,41 +6,41 @@
   margin: 0;
   padding: 0;
 }
-
-/* make the whole page respect your --bg / --fg vars */
+html {
+  font-family: 'Permanent Marker', sans-serif;
+  scroll-behavior: smooth;
+}
 body {
   background-color: var(--bg);
   color: var(--fg);
   transition: background-color var(--transition), color var(--transition);
 }
-
-/* === Anime-Style Fonts === */
-/* Permanent Marker for body text, Bangers for logo & headings */
-html {
-  font-family: 'Permanent Marker', sans-serif;
-  scroll-behavior: smooth;
-}
-
 .logo,
 .view h2,
 .wiki-content section h2 {
   font-family: 'Bangers', cursive;
 }
 
-/* ===== THEME VARS ===== */
+/* ===== THEME VARIABLES ===== */
 :root {
-  --bg: #fff; --fg: #222;
-  --primary: #007bff; --secondary: #0056b3;
-  --card-bg: #f8f9fa; --shadow: rgba(0,0,0,0.1);
+  --bg: #fff;        /* page background */
+  --fg: #222;        /* text color */
+  --primary: #007bff;
+  --secondary: #0056b3;
+  --card-bg: #f8f9fa;
+  --shadow: rgba(0,0,0,0.1);
   --transition: .3s;
 }
 [data-theme="dark"] {
-  --bg: #121212; --fg: #e0e0e0;
-  --primary: #3399ff; --secondary: #2288ee;
-  --card-bg: #1e1e1e; --shadow: rgba(0,0,0,0.7);
+  --bg: #121212;
+  --fg: #e0e0e0;
+  --primary: #3399ff;
+  --secondary: #2288ee;
+  --card-bg: #1e1e1e;
+  --shadow: rgba(0,0,0,0.7);
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER & CONTROLS ===== */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -48,7 +48,9 @@ html {
   background: var(--card-bg);
   padding: 1rem 2rem;
   box-shadow: 0 2px 4px var(--shadow);
-  position: sticky; top: 0; z-index: 100;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .logo {
   font-size: 2rem;
@@ -91,14 +93,14 @@ html {
   cursor: not-allowed;
 }
 
-/* ===== VIEWS ===== */
+/* ===== VIEW CONTAINER ===== */
 .view {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-/* ===== CARDS ===== */
+/* ===== CARD GRID & CARD ===== */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px,1fr));
@@ -137,7 +139,7 @@ html {
   font-weight: 500;
 }
 
-/* ===== VIEW DETAILS BUTTON ===== */
+/* ===== BUTTONS ===== */
 .view-btn {
   margin: .5rem;
   padding: .5rem;
@@ -153,7 +155,7 @@ html {
   background: var(--secondary);
 }
 
-/* ===== SKELETON ===== */
+/* ===== SKELETON LOADER ===== */
 .skeleton {
   animation: pulse 1.5s infinite ease-in-out;
 }
@@ -281,12 +283,6 @@ html {
 .wiki-content {
   flex: 2 1 400px;
 }
-.wiki-content .lead {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-/* ===== NEW SYNOPSIS SECTION ===== */
 .wiki-content section h2 {
   margin-top: 2rem;
   margin-bottom: .75rem;
@@ -323,4 +319,38 @@ html {
   margin-top: 2rem;
   width: 100%;
   text-align: center;
+}
+
+/* ===== QUIZ VIEW ===== */
+.quiz-view form {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.quiz-view .quiz-question {
+  margin-bottom: 1.5rem;
+}
+.quiz-view .quiz-question p {
+  margin-bottom: .5rem;
+}
+.quiz-view label {
+  margin-right: 1rem;
+}
+#quiz-back-btn {
+  margin-left: 1rem;
+}
+
+/* ===== AMAZON BUTTON (dark mode only) ===== */
+[data-theme="dark"] .infobox a {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background var(--transition);
+}
+[data-theme="dark"] .infobox a:hover {
+  background: var(--secondary);
 }

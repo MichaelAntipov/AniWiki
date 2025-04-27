@@ -10,6 +10,7 @@
   <header class="site-header">
     <h1 class="logo" id="logo">AniWiki</h1>
     <div class="controls">
+      <button id="quiz-btn">Find an Anime You’ll Love</button>
       <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
       <select id="search-mode" aria-label="Search Mode">
         <option value="anime">Anime</option>
@@ -22,7 +23,7 @@
 
   <main id="app"></main>
 
-  <!-- HOME VIEW -->
+  <!-- HOME VIEW: popular anime & characters -->
   <template id="home-template">
     <section class="view home-view">
       <h2>Popular Anime</h2>
@@ -41,7 +42,7 @@
     </section>
   </template>
 
-  <!-- RESULTS VIEW -->
+  <!-- RESULTS VIEW: search results + pagination -->
   <template id="results-template">
     <section class="view results-view">
       <h2>Search Results</h2>
@@ -54,7 +55,7 @@
     </section>
   </template>
 
-  <!-- DETAILS VIEW -->
+  <!-- DETAILS VIEW: show anime or character wiki -->
   <template id="details-template">
     <section class="view details-view">
       <button id="back-btn">« Back</button>
@@ -62,7 +63,44 @@
     </section>
   </template>
 
-  <!-- CARD TEMPLATE -->
+  <!-- QUIZ VIEW: interactive recommendation quiz -->
+  <template id="quiz-template">
+    <section class="view quiz-view">
+      <h2>Anime Recommendation Quiz</h2>
+      <form id="quiz-form">
+        <!-- five yes/no questions map to a code -->
+        <div class="quiz-question">
+          <p>1. Do you prefer action/adventure (shōnen) series?</p>
+          <label><input type="radio" name="q1" value="1" required> Yes</label>
+          <label><input type="radio" name="q1" value="0"> No</label>
+        </div>
+        <div class="quiz-question">
+          <p>2. Do you enjoy supernatural or fantasy elements?</p>
+          <label><input type="radio" name="q2" value="1" required> Yes</label>
+          <label><input type="radio" name="q2" value="0"> No</label>
+        </div>
+        <div class="quiz-question">
+          <p>3. Do you like comedy-centric shows?</p>
+          <label><input type="radio" name="q3" value="1" required> Yes</label>
+          <label><input type="radio" name="q3" value="0"> No</label>
+        </div>
+        <div class="quiz-question">
+          <p>4. Do you favor classics (anime first released before 2010)?</p>
+          <label><input type="radio" name="q4" value="1" required> Yes</label>
+          <label><input type="radio" name="q4" value="0"> No</label>
+        </div>
+        <div class="quiz-question">
+          <p>5. Do you enjoy romance or slice-of-life themes?</p>
+          <label><input type="radio" name="q5" value="1" required> Yes</label>
+          <label><input type="radio" name="q5" value="0"> No</label>
+        </div>
+        <button type="submit" class="view-btn">Submit</button>
+      </form>
+      <button id="quiz-back-btn" class="view-btn">Back</button>
+    </section>
+  </template>
+
+  <!-- CARD TEMPLATE: used by home/results for both anime & characters -->
   <template id="card-template">
     <div class="card">
       <img class="card-img" src="" alt="Poster"/>
@@ -73,7 +111,7 @@
     </div>
   </template>
 
-  <!-- SKELETON TEMPLATE -->
+  <!-- SKELETON: loading placeholder -->
   <template id="skeleton-template">
     <div class="card skeleton">
       <div class="card-img placeholder"></div>
@@ -84,7 +122,7 @@
     </div>
   </template>
 
-  <!-- ERROR TEMPLATE -->
+  <!-- ERROR TEMPLATE: friendly error display -->
   <template id="error-template">
     <section class="view error-view">
       <h2>Oops!</h2>
