@@ -7,6 +7,13 @@
   padding: 0;
 }
 
+/* make the whole page respect your --bg / --fg vars */
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  transition: background-color var(--transition), color var(--transition);
+}
+
 /* === Anime-Style Fonts === */
 /* Permanent Marker for body text, Bangers for logo & headings */
 html {
