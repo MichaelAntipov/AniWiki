@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AniWiki</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="logo" id="logo">AniWiki</h1>
+    <div class="controls">
+      <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+      <select id="search-mode" aria-label="Search Mode">
+        <option value="anime">Anime</option>
+        <option value="character">Character</option>
+      </select>
+      <input id="search-input" type="text" placeholder="Search anime or character…" />
+      <button id="search-btn">Search</button>
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <!-- HOME VIEW -->
+  <template id="home-template">
+    <section class="view home-view">
+      <h2>Popular Anime</h2>
+      <div class="carousel">
+        <button class="carousel-btn prev" data-target="popular-anime">&#8249;</button>
+        <div id="popular-anime" class="carousel-track"></div>
+        <button class="carousel-btn next" data-target="popular-anime">&#8250;</button>
+      </div>
+
+      <h2>Popular Characters</h2>
+      <div class="carousel">
+        <button class="carousel-btn prev" data-target="popular-characters">&#8249;</button>
+        <div id="popular-characters" class="carousel-track"></div>
+        <button class="carousel-btn next" data-target="popular-characters">&#8250;</button>
+      </div>
+    </section>
+  </template>
+
+  <!-- RESULTS VIEW -->
+  <template id="results-template">
+    <section class="view results-view">
+      <h2>Search Results</h2>
+      <div id="results-container" class="card-grid"></div>
+      <div class="pagination">
+        <button id="prev-page" disabled>« Prev</button>
+        <span id="page-info">Page 1</span>
+        <button id="next-page" disabled>Next »</button>
+      </div>
+    </section>
+  </template>
+
+  <!-- DETAILS VIEW -->
+  <template id="details-template">
+    <section class="view details-view">
+      <button id="back-btn">« Back</button>
+      <div id="anime-details"></div>
+    </section>
+  </template>
+
+  <!-- CARD TEMPLATE -->
+  <template id="card-template">
+    <div class="card">
+      <img class="card-img" src="" alt="Poster"/>
+      <div class="card-body">
+        <h3 class="card-title"></h3>
+        <p class="card-score"></p>
+      </div>
+    </div>
+  </template>
+
+  <!-- SKELETON TEMPLATE -->
+  <template id="skeleton-template">
+    <div class="card skeleton">
+      <div class="card-img placeholder"></div>
+      <div class="card-body">
+        <div class="placeholder placeholder-text title"></div>
+        <div class="placeholder placeholder-text score"></div>
+      </div>
+    </div>
+  </template>
+
+  <!-- ERROR TEMPLATE -->
+  <template id="error-template">
+    <section class="view error-view">
+      <h2>Oops!</h2>
+      <p id="error-message">Something went wrong.</p>
+    </section>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
