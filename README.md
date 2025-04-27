@@ -1,4 +1,4 @@
-Formatted Version: [https://docs.google.com/document/d/1IqdKxLAzLZnTSvVhHK20aUMVk-dyrEMcHyOK7sw6Ik8/edit?usp=sharing](url)
+Formatted Version: https://docs.google.com/document/d/1IqdKxLAzLZnTSvVhHK20aUMVk-dyrEMcHyOK7sw6Ik8/edit?usp=sharing
 
 AniWiki
 AniWiki is a simple, single‐page anime & character “wiki” where you can:
