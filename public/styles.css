@@ -6,13 +6,18 @@
   margin: 0;
   padding: 0;
 }
-html { font-family: sans-serif; scroll-behavior: smooth; }
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: var(--bg);
-  color: var(--fg);
+
+/* === Anime-Style Fonts === */
+/* Permanent Marker for body text, Bangers for logo & headings */
+html {
+  font-family: 'Permanent Marker', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.logo,
+.view h2,
+.wiki-content section h2 {
+  font-family: 'Bangers', cursive;
 }
 
 /* ===== THEME VARS ===== */
@@ -39,7 +44,7 @@ body {
   position: sticky; top: 0; z-index: 100;
 }
 .logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--primary);
   cursor: pointer;
 }
